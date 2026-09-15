@@ -399,13 +399,24 @@ def update(frame):
 
 
 
-ani = FuncAnimation(
+
+print("\nCreating GIF... Please wait.")
+
+gif_ani = FuncAnimation(
     fig,
     update,
-    frames=TOTAL_FRAMES,
+    frames=200,
     interval=25,
-    repeat=True,
+    repeat=False,
     blit=False
 )
+
+gif_ani.save(
+    "matrix_multiplication.gif",
+    writer="pillow",
+    fps=15
+)
+
+print("GIF created successfully!")
 
 plt.show()
